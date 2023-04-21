@@ -5,20 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd2732c-7683-40bf-bbe3-9574fdd7e096" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/CodiciFiscali.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Comuni.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/InputPersone.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/GeneratoreCodiceFiscale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Sesso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/ValidatoreCodiceFiscale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/IncorrectFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/PersonaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/MainTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -56,7 +71,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.MainTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CodiceFiscale.Main" />
       <module name="CodiceFiscale" />
@@ -87,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MainTest" />
       </list>
     </recent_temporary>
   </component>
@@ -100,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682069707813</updated>
-      <workItem from="1682069709678" duration="1561000" />
+      <workItem from="1682069709678" duration="8015000" />
     </task>
     <servers />
   </component>
