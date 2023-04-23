@@ -1,2 +1,3 @@
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/test/java/CodiceFiscale/MainTest.java
-/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/test/java/CodiceFiscale/PersonaTest.java
+/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.java
+/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/test/java/CodiceFiscale/person/PersonTest.java

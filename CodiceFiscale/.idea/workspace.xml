@@ -5,23 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd2732c-7683-40bf-bbe3-9574fdd7e096" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/CodiciFiscali.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Comuni.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/InputPersone.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/GeneratoreCodiceFiscale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Sesso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/ValidatoreCodiceFiscale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/IncorrectFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/PersonaTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidDateException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidFiscalCodeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/GeneratoreCodiceFiscale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Persona.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Sesso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Sex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/ValidatoreCodiceFiscale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/IncorrectFormatException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/PersonaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Persona.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Sesso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/error/IncorrectFormatException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.MainTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.PersonaTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.MainTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.PersonaTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/MainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/PersonaTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +51,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,6 +62,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/TarPrograms/apache-maven-3.9.1" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -53,31 +75,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.09354538",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29990628&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="CodiceFiscale.person" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CodiceFiscale.Main" />
       <module name="CodiceFiscale" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CodiceFiscale.*" />
+          <option name="PATTERN" value="CodiceFiscale.fiscalcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,17 +113,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FiscalCodeCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodiceFiscale" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="CodiceFiscale.*" />
+          <option name="PATTERN" value="CodiceFiscale.fiscalcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="CodiceFiscale" />
-      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.MainTest" />
+      <option name="PACKAGE_NAME" value="CodiceFiscale.fiscalcode" />
+      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FiscalCodeCheckerTest.shouldBeValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodiceFiscale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CodiceFiscale.fiscalcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CodiceFiscale.fiscalcode" />
+      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" />
+      <option name="METHOD_NAME" value="shouldBeValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodiceFiscale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CodiceFiscale.person.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CodiceFiscale.person" />
+      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.person.PersonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonTest.shouldFailToCreatePersonBornInTheFutureByAMonth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodiceFiscale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CodiceFiscale.person.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CodiceFiscale.person" />
+      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.person.PersonTest" />
+      <option name="METHOD_NAME" value="shouldFailToCreatePersonBornInTheFutureByAMonth" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,7 +178,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="JUnit.PersonalFiscalCodeCheckerTest" />
+        <item itemvalue="JUnit.PersonTest" />
+        <item itemvalue="JUnit.PersonTest.shouldFailToCreatePersonBornInTheFutureByAMonth" />
+        <item itemvalue="JUnit.PersonalFiscalCodeCheckerTest.shouldBeValid" />
       </list>
     </recent_temporary>
   </component>
@@ -115,7 +193,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682069707813</updated>
-      <workItem from="1682069709678" duration="8015000" />
+      <workItem from="1682069709678" duration="8071000" />
+      <workItem from="1682081533720" duration="115000" />
+      <workItem from="1682093336762" duration="5892000" />
+      <workItem from="1682107240501" duration="4110000" />
+      <workItem from="1682156078418" duration="6658000" />
+      <workItem from="1682164815679" duration="293000" />
+      <workItem from="1682172499098" duration="5945000" />
+      <workItem from="1682278937791" duration="7857000" />
     </task>
     <servers />
   </component>
@@ -124,5 +209,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

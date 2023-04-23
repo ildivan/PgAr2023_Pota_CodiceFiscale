@@ -1,2 +1,3 @@
 CodiceFiscale/MainTest.class
-CodiceFiscale/PersonaTest.class
+CodiceFiscale/person/PersonTest.class
+CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class

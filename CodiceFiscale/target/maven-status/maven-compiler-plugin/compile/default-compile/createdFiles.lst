@@ -1,4 +1,8 @@
-CodiceFiscale/error/IncorrectFormatException.class
-CodiceFiscale/Persona.class
-CodiceFiscale/Sesso.class
+CodiceFiscale/error/InvalidFiscalCodeException.class
+CodiceFiscale/error/InvalidDateException.class
+CodiceFiscale/fiscalcode/FiscalCodeGenerator.class
+CodiceFiscale/person/Sex.class
 CodiceFiscale/Main.class
+CodiceFiscale/person/Person.class
+CodiceFiscale/fiscalcode/FiscalCode.class
+CodiceFiscale/fiscalcode/FiscalCodeChecker.class
