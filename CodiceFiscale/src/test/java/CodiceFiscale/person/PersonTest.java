@@ -2,6 +2,7 @@ package CodiceFiscale.person;
 
 
 import CodiceFiscale.error.InvalidDateException;
+import CodiceFiscale.error.InvalidNameException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -63,6 +64,13 @@ public class PersonTest {
         });
     }
 
+    @Test
+    public void shouldSucceedToCreatePerson29FebruaryInLeapYear(){
+        new Person("Mario", "Rossi",
+                    Sex.M, "Milano", 2020,2,29);
+
+    }
+
     //Tests invalid day for a month with 31 days
     @Test
     public void shouldFailToCreatePersonWithInvalidDayForJanuary(){
@@ -74,10 +82,54 @@ public class PersonTest {
 
     //Tests invalid day for a month with 30 days
     @Test
-    public void shouldFailToCreatePersonWithInvalidDayForDecember(){
+    public void shouldFailToCreatePersonWithInvalidDayForNovember(){
         Assertions.assertThrows(InvalidDateException.class,()->{
             new Person("Mario", "Rossi",
-                    Sex.M, "Milano", 2003,12,31);
+                    Sex.M, "Milano", 2003,11,31);
         });
+    }
+
+    @Test
+    public void shouldFailToCreatePersonWithInvalidCharactersInName(){
+        Assertions.assertThrows(InvalidNameException.class,()->{
+            new Person("Mario7", "Rossi",
+                    Sex.M, "Milano", 2003,11,30);
+        });
+    }
+
+    @Test
+    public void shouldFailToCreatePersonWithInvalidCharactersInSurname(){
+        Assertions.assertThrows(InvalidNameException.class,()->{
+            new Person("Mario", "Rossi\n",
+                    Sex.M, "Milano", 2003,11,30);
+        });
+    }
+
+    @Test
+    public void shouldFailToCreatePersonWithOnlyOneVocalAndNoConsonants(){
+        Assertions.assertThrows(InvalidNameException.class,()->{
+            new Person("a", "Rossi",
+                    Sex.M, "Milano", 2003,11,30);
+        });
+    }
+
+    @Test
+    public void shouldFailToCreatePersonWithOnlyOneConsonantAndNoVocals(){
+        Assertions.assertThrows(InvalidNameException.class,()->{
+            new Person("c", "Rossi",
+                    Sex.M, "Milano", 2003,11,30);
+        });
+    }
+
+    @Test
+    public void shouldSucceedToCreatePersonWithOnlyOneConsonantAndOneVocal(){
+        new Person("ca", "Rossi", Sex.M,
+                "Milano", 2003,11,30);
+    }
+
+    @Test
+    public void shouldSucceedToCreatePersonWithOnlyTwoVocals(){
+        new Person("aa", "Rossi", Sex.M,
+                "Milano", 2003,11,30);
     }
 }

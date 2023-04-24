@@ -1,5 +1,6 @@
 CodiceFiscale/error/InvalidFiscalCodeException.class
 CodiceFiscale/error/InvalidDateException.class
+CodiceFiscale/error/InvalidNameException.class
 CodiceFiscale/fiscalcode/FiscalCodeGenerator.class
 CodiceFiscale/person/Sex.class
 CodiceFiscale/Main.class

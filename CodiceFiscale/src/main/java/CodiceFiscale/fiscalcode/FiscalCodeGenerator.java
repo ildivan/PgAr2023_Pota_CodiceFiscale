@@ -5,7 +5,7 @@ import CodiceFiscale.person.Person;
 import java.util.Map;
 
 public class FiscalCodeGenerator {
-    private Map<String, String> cityCodes;
+    private final Map<String, String> cityCodes;
 
     public FiscalCodeGenerator(Map<String, String> cityCodes) {
         this.cityCodes = cityCodes;

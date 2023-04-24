@@ -1,5 +1,7 @@
 package CodiceFiscale.fiscalcode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class FiscalCodeChecker {
@@ -12,8 +14,10 @@ public class FiscalCodeChecker {
     public boolean isValid(String fiscalCode){
         return isFormatValid(fiscalCode) && areNameAndSurnameValid(fiscalCode)
                 && checkMonth(fiscalCode) && checkDay(fiscalCode)
-                && checkCityCode(fiscalCode);
+                && checkCityCode(fiscalCode) && checkControlCharacter(fiscalCode);
     }
+
+
 
     //Returns true if the letters and the digits are in the right place, also checks for length.
     private boolean isFormatValid(String fiscalCode){
@@ -35,6 +39,7 @@ public class FiscalCodeChecker {
     }
 
     private boolean checkMonth(String fiscalCode){
+        //Checks if the ninth character is one of the allowed characters for the month.
         return fiscalCode.matches(".{8}[ABCDEHLMPRST].{7}");
     }
 
@@ -46,7 +51,7 @@ public class FiscalCodeChecker {
         }else{
             adjustedDay = day;
         }
-        String month = fiscalCode.substring(8,9);
+        Character month = fiscalCode.charAt(8);
         return isDayInBounds(day) && doesDayExistsInMonth(adjustedDay,month);
     }
 
@@ -54,12 +59,12 @@ public class FiscalCodeChecker {
         return (day >= 1 && day <= 31) || (day >= 41 && day <= 71 );
     }
 
-    private boolean doesDayExistsInMonth(int day, String month) {
+    private boolean doesDayExistsInMonth(int day, Character month) {
         int daysInTheMonth;
         switch (month) {
-            case "A", "C", "E", "L", "M" -> daysInTheMonth = 31;
-            case "D", "H", "P", "R", "S", "T" -> daysInTheMonth = 30;
-            case "B" -> daysInTheMonth = 28;
+            case 'A', 'C', 'E', 'L', 'M' -> daysInTheMonth = 31;
+            case 'D', 'H', 'P', 'R', 'S', 'T' -> daysInTheMonth = 30;
+            case 'B' -> daysInTheMonth = 28;
             default -> daysInTheMonth = 0;
         }
 
@@ -67,8 +72,78 @@ public class FiscalCodeChecker {
     }
 
     private boolean checkCityCode(String fiscalCode) {
-        String city = fiscalCode.substring(12,15);
+        String city = fiscalCode.substring(11,15);
         return cityCodes.containsValue(city);
+    }
+
+    private boolean checkControlCharacter(String fiscalCode) {
+        char calculatedControlChar = calculateControlCharacter(fiscalCode);
+        char realControlChar = (char)fiscalCode.charAt(15);
+        return calculatedControlChar == realControlChar;
+    }
+
+    private Character calculateControlCharacter(String fiscalCode) {
+        ArrayList<Integer> numericFiscalCode = convertFiscalCodeToNumeric(fiscalCode);
+        int sum = numericFiscalCode.stream().reduce(0, Integer::sum);
+        int numericControlChar = sum%26;
+        return (char) (numericControlChar + 'A');
+    }
+
+    private ArrayList<Integer> convertFiscalCodeToNumeric(String fiscalCode) {
+        ArrayList<Integer> numericFiscalCode = new ArrayList<>();
+
+        for (int i = 0; i < fiscalCode.length()-1; i++) {
+            int toAdd;
+            if((i+1)%2 == 0){
+                toAdd = convertEvenOrderCharacter(fiscalCode.charAt(i));
+            }else{
+                toAdd = convertOddOrderCharacter(fiscalCode.charAt(i));
+            }
+            numericFiscalCode.add(toAdd);
+        }
+
+        return numericFiscalCode;
+    }
+
+    private int convertEvenOrderCharacter(char c) {
+        if(Character.isDigit(c)){
+            return c - '0';
+        }
+        return c - 'A';
+    }
+
+    private int convertOddOrderCharacter(char c) {
+        int value;
+        switch (c) {
+            case 'A', '0' -> value = 1;
+            case 'B', '1' -> value = 0;
+            case 'C', '2' -> value = 5;
+            case 'D', '3' -> value = 7;
+            case 'E', '4' -> value = 9;
+            case 'F', '5' -> value = 13;
+            case 'G', '6' -> value = 15;
+            case 'H', '7' -> value = 17;
+            case 'I', '8' -> value = 19;
+            case 'J', '9' -> value = 21;
+            case 'K' -> value = 2;
+            case 'L' -> value = 4;
+            case 'M' -> value = 18;
+            case 'N' -> value = 20;
+            case 'O' -> value = 11;
+            case 'P' -> value = 3;
+            case 'Q' -> value = 6;
+            case 'R' -> value = 8;
+            case 'S' -> value = 12;
+            case 'T' -> value = 14;
+            case 'U' -> value = 16;
+            case 'V' -> value = 10;
+            case 'W' -> value = 22;
+            case 'X' -> value = 25;
+            case 'Y' -> value = 24;
+            case 'Z' -> value = 23;
+            default -> value = -1;
+        }
+        return value;
     }
 
 }

@@ -1,10 +1,9 @@
 package CodiceFiscale.fiscalcode;
 
 
-
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +15,7 @@ public class FiscalCodeCheckerTest {
     @BeforeAll
     public static void initializeMap(){
         Map<String, String> cityCodes = new HashMap<>(1);
-        cityCodes.put("notimportant","584");
+        cityCodes.put("notimportant","L584");
         fiscalChecker = new FiscalCodeChecker(cityCodes);
     }
 
@@ -76,7 +75,22 @@ public class FiscalCodeCheckerTest {
     }
 
     @Test
+    public void shouldFailDay29OfFebruaryFemale(){
+        Assertions.assertFalse(fiscalChecker.isValid("RRAMHL24B69L584H"));
+    }
+
+    @Test
     public void shouldFailDay31OfApril(){
         Assertions.assertFalse(fiscalChecker.isValid("RRAMHL24D31L584H"));
+    }
+
+    @Test
+    public void shouldFailDay31OfAprilFemale(){
+        Assertions.assertFalse(fiscalChecker.isValid("RRAMHL24D71L584H"));
+    }
+
+    @Test
+    public void shouldFailInvalidControlChar(){
+        Assertions.assertFalse(fiscalChecker.isValid("RRAMHL24D71L584Z"));
     }
 }

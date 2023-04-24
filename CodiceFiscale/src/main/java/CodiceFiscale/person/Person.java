@@ -1,8 +1,11 @@
 package CodiceFiscale.person;
 
 import CodiceFiscale.error.InvalidDateException;
+import CodiceFiscale.error.InvalidNameException;
 
+import java.time.LocalDate;
 import java.time.Year;
+import java.time.YearMonth;
 import java.util.Calendar;
 
 /**
@@ -30,6 +33,8 @@ public class Person{
     public Person(String name, String surname, Sex sex,
                   String cityOfBirth, int yearOfBirth,
                   int monthOfBirth, int dayOfBirth){
+        checkName(name);
+        checkName(surname);
         this.name = name;
         this.surname = surname;
         this.sex = sex;
@@ -42,43 +47,72 @@ public class Person{
 
     }
 
+    private void checkName(String name){
+        //Checks that the name is only letters and at least 2 letters long.
+        boolean onlyLetters = name.matches("[A-Za-z][A-Za-z]+");
+        //Checks that there are at least two vocals in the name.
+        boolean atLeastTwoVocals = name.matches(".*[AEIOUaeiou].*[AEIOUaeiou].*");
+        //Checks that there are at least a vocal and a consonant.
+        boolean containsVocalAndConsonant =
+                name.matches("((.*[AEIOUaeiou].*[^AEIOUaeiou].*)|(.*[^AEIOUaeiou].*[AEIOUaeiou].*))");
+
+        boolean isValid = onlyLetters && (atLeastTwoVocals || containsVocalAndConsonant);
+
+        if(!isValid){
+            throw new InvalidNameException(String.format("Name not valid: %s",name));
+        }
+    }
+
     private void checkDateValidity(int year, int month, int day) {
-        checkYear(year);
-        checkMonth(month, year);
-        checkDay(day, month, year);
+        LocalDate today = LocalDate.now();
+
+        checkYear(year,today);
+        checkMonth(month, year,today);
+        checkDay(day, month, year,today);
     }
 
-    private void checkYear(int year) {
-        int currentYear = Year.now().getValue();
-        if (year > currentYear) throw new InvalidDateException("Year of birth not valid.");
+    private void checkYear(int year, LocalDate today) {
+        int currentYear = today.getYear();
+
+        if (year > currentYear) {
+            throw new InvalidDateException("Year of birth not valid.");
+        }
     }
 
-    private void checkMonth(int month, int year) {
-        boolean isMonthValid = month <= 12;
-        int currentYear = Year.now().getValue();
+    private void checkMonth(int month, int year, LocalDate today) {
+        boolean isMonthValid;
+
+        int currentYear = today.getYear();
+        int currentMonth = today.getMonthValue();
         if (year == currentYear) {
-            int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
             isMonthValid = month <= currentMonth;
+        }else{
+            isMonthValid = month <= 12;
         }
-        if (!isMonthValid) throw new InvalidDateException("Month of birth not valid.");
+
+        if (!isMonthValid) {
+            throw new InvalidDateException("Month of birth not valid.");
+        }
     }
 
-    private void checkDay(int day, int month, int year) {
-        int daysInTheMonth;
-        switch (month) {
-            case 1, 3, 5, 7, 8 -> daysInTheMonth = 31;
-            case 4, 6, 9, 10, 11, 12 -> daysInTheMonth = 30;
-            default -> daysInTheMonth = 28;
-        }
-        boolean isDayValid = day <= daysInTheMonth;
-        int currentYear = Year.now().getValue();
-        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
-        int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+    private void checkDay(int day, int month, int year, LocalDate today) {
+        boolean isDayValid;
+
+        int currentYear = today.getYear();
+        int currentMonth = today.getMonthValue();
+        int currentDay = today.getDayOfMonth();
+
         if (year == currentYear && month == currentMonth) {
             isDayValid = day <= currentDay;
+        }else{
+            YearMonth yearMonthObject = YearMonth.of(year, month);
+            int daysInMonth = yearMonthObject.lengthOfMonth();
+            isDayValid = day <= daysInMonth;
         }
 
-        if (!isDayValid) throw new InvalidDateException("Day of birth not valid.");
+        if (!isDayValid) {
+            throw new InvalidDateException("Day of birth not valid.");
+        }
     }
 
 
