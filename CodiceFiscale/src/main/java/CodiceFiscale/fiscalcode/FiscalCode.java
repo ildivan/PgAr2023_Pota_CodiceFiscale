@@ -1,6 +1,6 @@
 package CodiceFiscale.fiscalcode;
 
-import CodiceFiscale.error.InvalidFiscalCodeException;
+import CodiceFiscale.error.InvalidInputException;
 
 public class FiscalCode {
     private final String code;
@@ -12,7 +12,7 @@ public class FiscalCode {
             code = fiscalCode;
             return;
         }
-        throw new InvalidFiscalCodeException();
+        throw new InvalidInputException("Codice fiscale non valido.");
     }
 
     //Protected constructor, intended to be used ONLY by a FiscalCodeGenerator.

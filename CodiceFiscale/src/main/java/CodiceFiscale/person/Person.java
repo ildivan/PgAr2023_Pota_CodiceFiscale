@@ -1,51 +1,56 @@
 package CodiceFiscale.person;
 
-import CodiceFiscale.error.InvalidDateException;
-import CodiceFiscale.error.InvalidNameException;
+import CodiceFiscale.error.InvalidInputException;
+import com.google.gson.annotations.SerializedName;
 
 import java.time.LocalDate;
-import java.time.Year;
 import java.time.YearMonth;
-import java.util.Calendar;
 
 /**
  * Represents a person, contains all data to work with personal fiscal codes.
  */
 public class Person{
 
+    @SerializedName("nome")
     private final String name;
+    @SerializedName("cognome")
     private final String surname;
+    @SerializedName("sesso")
     private final Sex sex;
+    @SerializedName("comune_nascita")
     private final String cityOfBirth;
-    private final int yearOfBirth;
-    private final int monthOfBirth;
-    private final int dayOfBirth;
+    @SerializedName("data_nascita")
+    private final String dateOfBirth;
 
     /**
      * @param name         Name of the person.
      * @param surname      Surname of the person.
      * @param sex          Can be male (Sex.M) or female (Sex.F)
      * @param cityOfBirth  String containing the city of birth of the person.
-     * @param yearOfBirth  Year of birth of the person.
-     * @param monthOfBirth Month of birth of the person.
-     * @param dayOfBirth   Day of birth of the person.
+     * @param dateOfBirth String representing the persons's date of birth formatted like this "YYYY-MM-DD"
      */
     public Person(String name, String surname, Sex sex,
-                  String cityOfBirth, int yearOfBirth,
-                  int monthOfBirth, int dayOfBirth){
+                  String cityOfBirth, String dateOfBirth){
         checkName(name);
         checkName(surname);
         this.name = name;
         this.surname = surname;
+
+        checkSex(sex);
         this.sex = sex;
         this.cityOfBirth = cityOfBirth;
 
+        checkDateFormat(dateOfBirth);
+        String[] dividedDate = dateOfBirth.split("-");
+        int yearOfBirth = Integer.parseInt(dividedDate[0]);
+        int monthOfBirth = Integer.parseInt(dividedDate[1]);
+        int dayOfBirth = Integer.parseInt(dividedDate[2]);
+
         checkDateValidity(yearOfBirth, monthOfBirth, dayOfBirth);
-        this.yearOfBirth = yearOfBirth;
-        this.monthOfBirth = monthOfBirth;
-        this.dayOfBirth = dayOfBirth;
+        this.dateOfBirth = dateOfBirth;
 
     }
+
 
     private void checkName(String name){
         //Checks that the name is only letters and at least 2 letters long.
@@ -59,7 +64,18 @@ public class Person{
         boolean isValid = onlyLetters && (atLeastTwoVocals || containsVocalAndConsonant);
 
         if(!isValid){
-            throw new InvalidNameException(String.format("Name not valid: %s",name));
+            throw new InvalidInputException(String.format("Name not valid: %s",name));
+        }
+    }
+
+    private void checkSex(Sex sex){
+        if(sex == null) throw new InvalidInputException("Sex not valid, it is null");
+    }
+
+    public static void checkDateFormat(String dateOfBirth) {
+        boolean validFormat = dateOfBirth.matches("([0-9]{4})-([0-9]{2})-([0-9]{2})");
+        if (!validFormat) {
+            throw new InvalidInputException(String.format("Date is not formatted correctly: %s", dateOfBirth));
         }
     }
 
@@ -75,7 +91,7 @@ public class Person{
         int currentYear = today.getYear();
 
         if (year > currentYear) {
-            throw new InvalidDateException("Year of birth not valid.");
+            throw new InvalidInputException("Year of birth not valid.");
         }
     }
 
@@ -91,7 +107,7 @@ public class Person{
         }
 
         if (!isMonthValid) {
-            throw new InvalidDateException("Month of birth not valid.");
+            throw new InvalidInputException("Month of birth not valid.");
         }
     }
 
@@ -111,7 +127,7 @@ public class Person{
         }
 
         if (!isDayValid) {
-            throw new InvalidDateException("Day of birth not valid.");
+            throw new InvalidInputException("Day of birth not valid.");
         }
     }
 
@@ -133,14 +149,15 @@ public class Person{
     }
 
     public int getYearOfBirth() {
-        return yearOfBirth;
+        return Integer.parseInt(dateOfBirth.substring(0,4));
     }
 
     public int getMonthOfBirth() {
-        return monthOfBirth;
+        return Integer.parseInt(dateOfBirth.substring(5,7));
     }
 
     public int getDayOfBirth() {
-        return dayOfBirth;
+        return Integer.parseInt(dateOfBirth.substring(8,10));
     }
+
 }

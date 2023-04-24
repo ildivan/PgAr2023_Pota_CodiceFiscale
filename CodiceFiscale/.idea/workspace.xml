@@ -5,29 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd2732c-7683-40bf-bbe3-9574fdd7e096" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/CodiciFiscali.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/Comuni.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestFiles/InputPersone.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/XML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidDateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidFiscalCodeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidInputException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/person/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/person/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.person.PersonTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.person.PersonTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.person.PersonTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.person.PersonTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/person/PersonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/person/PersonTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,32 +52,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.preview.features.used": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.29990628",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.29990628&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="CodiceFiscale" />
       <recent name="CodiceFiscale.person" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CodiceFiscale.Main" />
       <module name="CodiceFiscale" />
@@ -164,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PersonTest" />
         <item itemvalue="JUnit.FiscalCodeCheckerTest" />
         <item itemvalue="JUnit.PersonTest.shouldFailToCreatePersonBornInTheFutureByAMonth" />
       </list>
@@ -187,7 +179,8 @@
       <workItem from="1682164815679" duration="293000" />
       <workItem from="1682172499098" duration="5945000" />
       <workItem from="1682278937791" duration="7937000" />
-      <workItem from="1682336944815" duration="14712000" />
+      <workItem from="1682336944815" duration="15026000" />
+      <workItem from="1682359578895" duration="8627000" />
     </task>
     <servers />
   </component>
