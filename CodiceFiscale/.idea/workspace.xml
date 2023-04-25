@@ -5,20 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd2732c-7683-40bf-bbe3-9574fdd7e096" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TestFiles/CodiciFiscali.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/Comuni.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestFiles/InputPersone.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/XML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Output/codiciPersone.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeGeneratorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidDateException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidFiscalCodeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/error/InvalidInputException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/XML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/JSON$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/JSON$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/JSON$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/JSON$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/JSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/JSON.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/person/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/person/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.person.PersonTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.person.PersonTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.person.PersonTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.person.PersonTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FiscalCodeCheckerTest.shouldBeValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FiscalCodeCheckerTest.shouldSucceed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodiceFiscale" />
       <extension name="coverage">
         <pattern>
@@ -117,8 +132,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="CodiceFiscale.fiscalcode" />
       <option name="MAIN_CLASS_NAME" value="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" />
-      <option name="METHOD_NAME" value="shouldBeValid" />
+      <option name="METHOD_NAME" value="shouldSucceed" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FiscalCodeGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodiceFiscale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="CodiceFiscale.fiscalcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="CodiceFiscale.fiscalcode" />
+      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,28 +168,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonTest.shouldFailToCreatePersonBornInTheFutureByAMonth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CodiceFiscale" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="CodiceFiscale.person.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="CodiceFiscale.person" />
-      <option name="MAIN_CLASS_NAME" value="CodiceFiscale.person.PersonTest" />
-      <option name="METHOD_NAME" value="shouldFailToCreatePersonBornInTheFutureByAMonth" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FiscalCodeGeneratorTest" />
         <item itemvalue="JUnit.PersonTest" />
         <item itemvalue="JUnit.FiscalCodeCheckerTest" />
-        <item itemvalue="JUnit.PersonTest.shouldFailToCreatePersonBornInTheFutureByAMonth" />
+        <item itemvalue="JUnit.FiscalCodeCheckerTest.shouldSucceed" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +195,8 @@
       <workItem from="1682172499098" duration="5945000" />
       <workItem from="1682278937791" duration="7937000" />
       <workItem from="1682336944815" duration="15026000" />
-      <workItem from="1682359578895" duration="8627000" />
+      <workItem from="1682359578895" duration="9010000" />
+      <workItem from="1682413084304" duration="15741000" />
     </task>
     <servers />
   </component>

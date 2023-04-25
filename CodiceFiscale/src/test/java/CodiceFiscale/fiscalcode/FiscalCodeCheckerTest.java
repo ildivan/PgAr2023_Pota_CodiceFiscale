@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FiscalCodeCheckerTest {
 
@@ -93,4 +92,5 @@ public class FiscalCodeCheckerTest {
     public void shouldFailInvalidControlChar(){
         Assertions.assertFalse(fiscalChecker.isValid("RRAMHL24D71L584Z"));
     }
+
 }

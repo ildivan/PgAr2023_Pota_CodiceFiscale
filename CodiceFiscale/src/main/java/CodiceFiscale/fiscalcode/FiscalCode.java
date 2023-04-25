@@ -5,6 +5,10 @@ import CodiceFiscale.error.InvalidInputException;
 public class FiscalCode {
     private final String code;
 
+    public FiscalCode(){
+        code = "ASSENTE";
+    }
+
     //Lets you create a fiscal code instance,
     // but a FiscalCodeChecker is needed to ensure the correctness of the code.
     public FiscalCode(String fiscalCode, FiscalCodeChecker checker){

@@ -1,9 +1,9 @@
+/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/error/InvalidInputException.java
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/person/Person.java
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/Main.java
-/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/error/InvalidNameException.java
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/person/Sex.java
+/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/JSON.java
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeGenerator.java
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java
-/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/error/InvalidDateException.java
-/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/error/InvalidFiscalCodeException.java
+/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/XML.java
 /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java

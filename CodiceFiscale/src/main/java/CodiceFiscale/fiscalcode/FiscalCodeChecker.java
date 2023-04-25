@@ -25,8 +25,8 @@ public class FiscalCodeChecker {
     }
 
     private boolean areNameAndSurnameValid(String fiscalCode) {
-        String name = fiscalCode.substring(0,3);
-        String surname = fiscalCode.substring(3,6);
+        String surname = fiscalCode.substring(0,3);
+        String name = fiscalCode.substring(3,6);
         return checkName(name) && checkName(surname);
     }
 
@@ -77,22 +77,22 @@ public class FiscalCodeChecker {
     }
 
     private boolean checkControlCharacter(String fiscalCode) {
-        char calculatedControlChar = calculateControlCharacter(fiscalCode);
+        char calculatedControlChar = calculateControlCharacter(fiscalCode.substring(0,fiscalCode.length()-1));
         char realControlChar = (char)fiscalCode.charAt(15);
         return calculatedControlChar == realControlChar;
     }
 
-    private Character calculateControlCharacter(String fiscalCode) {
+    protected Character calculateControlCharacter(String fiscalCode) {
         ArrayList<Integer> numericFiscalCode = convertFiscalCodeToNumeric(fiscalCode);
         int sum = numericFiscalCode.stream().reduce(0, Integer::sum);
         int numericControlChar = sum%26;
-        return (char) (numericControlChar + 'A');
+        return (char) (numericControlChar + (int)'A');
     }
 
-    private ArrayList<Integer> convertFiscalCodeToNumeric(String fiscalCode) {
+    public ArrayList<Integer> convertFiscalCodeToNumeric(String fiscalCode) {
         ArrayList<Integer> numericFiscalCode = new ArrayList<>();
 
-        for (int i = 0; i < fiscalCode.length()-1; i++) {
+        for (int i = 0; i < fiscalCode.length(); i++) {
             int toAdd;
             if((i+1)%2 == 0){
                 toAdd = convertEvenOrderCharacter(fiscalCode.charAt(i));
@@ -107,9 +107,9 @@ public class FiscalCodeChecker {
 
     private int convertEvenOrderCharacter(char c) {
         if(Character.isDigit(c)){
-            return c - '0';
+            return Character.getNumericValue(c);
         }
-        return c - 'A';
+        return (int)c - (int)'A';
     }
 
     private int convertOddOrderCharacter(char c) {

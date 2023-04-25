@@ -1,8 +1,12 @@
 package CodiceFiscale.person;
 
 import CodiceFiscale.error.InvalidInputException;
+import CodiceFiscale.fiscalcode.FiscalCode;
+import CodiceFiscale.fiscalcode.FiscalCodeGenerator;
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.beans.Transient;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
@@ -21,6 +25,10 @@ public class Person{
     private final String cityOfBirth;
     @SerializedName("data_nascita")
     private final String dateOfBirth;
+
+    @Expose(deserialize = false)
+    @SerializedName("codice_fiscale")
+    private FiscalCode fiscalCode;
 
     /**
      * @param name         Name of the person.
@@ -49,6 +57,7 @@ public class Person{
         checkDateValidity(yearOfBirth, monthOfBirth, dayOfBirth);
         this.dateOfBirth = dateOfBirth;
 
+        fiscalCode = new FiscalCode();
     }
 
 
@@ -148,6 +157,10 @@ public class Person{
         return cityOfBirth;
     }
 
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
     public int getYearOfBirth() {
         return Integer.parseInt(dateOfBirth.substring(0,4));
     }
@@ -160,4 +173,14 @@ public class Person{
         return Integer.parseInt(dateOfBirth.substring(8,10));
     }
 
+    public void setFiscalCode(FiscalCodeGenerator generator) {
+        this.fiscalCode = generator.generateFiscalCode(this);
+    }
+
+    public FiscalCode getFiscalCode() {
+        return fiscalCode;
+    }
+    public void resetFiscalCode() {
+        fiscalCode = new FiscalCode();
+    }
 }
