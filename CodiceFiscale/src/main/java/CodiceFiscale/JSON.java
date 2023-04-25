@@ -90,7 +90,7 @@ public class JSON {
         FileReader fileReader = new FileReader(filepath);
         return Arrays.asList(gson.fromJson(fileReader,Person[].class));
     }
-    
+
     //Write to json file the processed data:
     // people with their fiscal codes if not absent,
     // invalid fiscal codes

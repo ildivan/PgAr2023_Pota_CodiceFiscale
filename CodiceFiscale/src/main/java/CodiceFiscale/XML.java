@@ -149,29 +149,12 @@ public class XML {
         xmlw.writeStartElement("persona");
         xmlw.writeAttribute("id", Integer.toString(id));
 
-            xmlw.writeStartElement("nome");
-            xmlw.writeCharacters(person.getName());
-            xmlw.writeEndElement();
-
-            xmlw.writeStartElement("cognome");
-            xmlw.writeCharacters(person.getSurname());
-            xmlw.writeEndElement();
-
-            xmlw.writeStartElement("sesso");
-            xmlw.writeCharacters(person.getSex().toString());
-            xmlw.writeEndElement();
-
-            xmlw.writeStartElement("comune_nascita");
-            xmlw.writeCharacters(person.getCityOfBirth());
-            xmlw.writeEndElement();
-
-            xmlw.writeStartElement("data_nascita");
-            xmlw.writeCharacters(person.getDateOfBirth());
-            xmlw.writeEndElement();
-
-            xmlw.writeStartElement("codice_fiscale");
-            xmlw.writeCharacters(person.getFiscalCode().getCode());
-            xmlw.writeEndElement();
+        writeTag(xmlw,"nome",person.getName());
+        writeTag(xmlw,"cognome",person.getSurname());
+        writeTag(xmlw,"sesso",person.getSex().toString());
+        writeTag(xmlw,"comune_nascita",person.getCityOfBirth());
+        writeTag(xmlw,"data_nascita",person.getDateOfBirth());
+        writeTag(xmlw,"codice_fiscale",person.getFiscalCode().getCode());
 
         xmlw.writeEndElement();
     }
@@ -189,14 +172,15 @@ public class XML {
         xmlw.writeStartElement(name);
         xmlw.writeAttribute("numero",Integer.toString(series.size()));
         for (String code : series){
-            writeCode(xmlw,code);
+            writeTag(xmlw,"codice",code);
         }
         xmlw.writeEndElement();
     }
-
-    private static void writeCode(XMLStreamWriter xmlw, String code) throws XMLStreamException {
-        xmlw.writeStartElement("codice");
-        xmlw.writeCharacters(code);
+    
+    //Writes an xml tag that does not have any sub-tags or any attributes.
+    private static void writeTag(XMLStreamWriter xmlw, String name, String value) throws XMLStreamException {
+        xmlw.writeStartElement(name);
+        xmlw.writeCharacters(value);
         xmlw.writeEndElement();
     }
 }
