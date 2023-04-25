@@ -6,7 +6,6 @@ import CodiceFiscale.fiscalcode.FiscalCodeGenerator;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.beans.Transient;
 import java.time.LocalDate;
 import java.time.YearMonth;
 
@@ -35,7 +34,7 @@ public class Person{
      * @param surname      Surname of the person.
      * @param sex          Can be male (Sex.M) or female (Sex.F)
      * @param cityOfBirth  String containing the city of birth of the person.
-     * @param dateOfBirth String representing the persons's date of birth formatted like this "YYYY-MM-DD"
+     * @param dateOfBirth String representing the person's date of birth formatted like this "YYYY-MM-DD"
      */
     public Person(String name, String surname, Sex sex,
                   String cityOfBirth, String dateOfBirth){
@@ -46,7 +45,9 @@ public class Person{
 
         checkSex(sex);
         this.sex = sex;
-        this.cityOfBirth = cityOfBirth;
+
+        //Deletes every character that is not allowed
+        this.cityOfBirth = cityOfBirth.replaceAll("[^'\\-\\sa-zA-Z]","");
 
         checkDateFormat(dateOfBirth);
         String[] dividedDate = dateOfBirth.split("-");

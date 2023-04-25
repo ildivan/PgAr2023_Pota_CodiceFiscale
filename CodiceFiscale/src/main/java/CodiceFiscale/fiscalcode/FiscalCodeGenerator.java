@@ -4,7 +4,6 @@ import CodiceFiscale.error.InvalidInputException;
 import CodiceFiscale.person.Person;
 import CodiceFiscale.person.Sex;
 
-import java.util.List;
 import java.util.Map;
 
 public class FiscalCodeGenerator {

@@ -8,7 +8,9 @@ import CodiceFiscale.person.Person;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,50 +19,19 @@ public class Main {
     }
 
     public static void handleXMLFiles() {
-        String cityCodesFileNameXML = "./TestFiles/Comuni.xml";
-        String fiscalCodesFileNameXML = "./TestFiles/CodiciFiscali.xml";
-        String peopleFileNameXML = "./TestFiles/InputPersone.xml";
+        String cityCodesFilepathXML = "./TestFiles/Comuni.xml";
+        String fiscalCodesFilepathXML = "./TestFiles/CodiciFiscali.xml";
+        String peopleFilepathXML = "./TestFiles/InputPersone.xml";
+        String outputFilepathXML = "./Output/codiciPersone.xml";
+
         try {
-            
-            Map<String, String> cityCodes = XML.getCityCodes(cityCodesFileNameXML);
+
+            Map<String, String> cityCodes = XML.getCityCodes(cityCodesFilepathXML);
 
             FiscalCodeChecker checker = new FiscalCodeChecker(cityCodes);
             FiscalCodeGenerator generator = new FiscalCodeGenerator(cityCodes);
 
-            List<String> allFiscalCodes = XML.getFiscalCodes(fiscalCodesFileNameXML);
-            ArrayList<FiscalCode> validFiscalCodes =
-                    getValidCodes(XML.getFiscalCodes(fiscalCodesFileNameXML), checker);
-
-            ArrayList<Person> people = XML.getPeople(peopleFileNameXML);
-
-            List<Person> peopleWithFiscalCodeInFile =
-                    getPeopleWithFiscalCodeInList(people,validFiscalCodes,generator);
-
-            List<Person> personWithoutFiscalCodeInFile = new ArrayList<>(people);
-            personWithoutFiscalCodeInFile.removeAll(peopleWithFiscalCodeInFile);
-
-
-        } catch (Exception e) {
-            System.out.println("Errore nella lettura dei file XML:");
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public static void handleJSONFiles() {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-        String cityCodesFileNameJson = "./TestFiles/Comuni.json";
-        String fiscalCodesFileNameJson = "./TestFiles/CodiciFiscali.json";
-        String peopleFileNameJson = "./TestFiles/InputPersone.json";
-        String outputFileNameJson = "./Output/codiciPersone.json";
-
-        try {
-            Map<String, String> cityCodes = JSON.getCityCodes(cityCodesFileNameJson);
-
-            FiscalCodeChecker checker = new FiscalCodeChecker(cityCodes);
-            FiscalCodeGenerator generator = new FiscalCodeGenerator(cityCodes);
-
-            List<String> allFiscalCodes = JSON.getFiscalCodes(fiscalCodesFileNameJson);
+            List<String> allFiscalCodes = XML.getFiscalCodes(fiscalCodesFilepathXML);
             List<FiscalCode> validFiscalCodes = getValidCodes(allFiscalCodes, checker);
             List<String> invalidFiscalCodes = new ArrayList<>(allFiscalCodes);
             invalidFiscalCodes.removeAll(
@@ -69,7 +40,7 @@ public class Main {
 
 
             List<Person> people =
-                    JSON.getPeople(peopleFileNameJson);
+                    XML.getPeople(peopleFilepathXML);
 
             List<Person> peopleWithFiscalCodeInFile =
                     getPeopleWithFiscalCodeInList(people,validFiscalCodes,generator);
@@ -80,7 +51,49 @@ public class Main {
                     peopleWithFiscalCodeInFile.stream().map(p -> p.getFiscalCode().getCode()).toList()
             );
 
-            JSON.writeOutput(people,invalidFiscalCodes, unmatchedFiscalCodes, outputFileNameJson);
+            XML.writeOutput(people,invalidFiscalCodes, unmatchedFiscalCodes, outputFilepathXML);
+
+        } catch (Exception e) {
+            System.out.println("Errore nella lettura dei file XML:");
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void handleJSONFiles() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+        String cityCodesFilepathJson = "./TestFiles/Comuni.json";
+        String fiscalCodesFilepathJson = "./TestFiles/CodiciFiscali.json";
+        String peopleFilepathJson = "./TestFiles/InputPersone.json";
+        String outputFilepathJson = "./Output/codiciPersone.json";
+
+        try {
+            Map<String, String> cityCodes = JSON.getCityCodes(cityCodesFilepathJson);
+
+            FiscalCodeChecker checker = new FiscalCodeChecker(cityCodes);
+            FiscalCodeGenerator generator = new FiscalCodeGenerator(cityCodes);
+
+            List<String> allFiscalCodes = JSON.getFiscalCodes(fiscalCodesFilepathJson);
+            List<FiscalCode> validFiscalCodes = getValidCodes(allFiscalCodes, checker);
+            List<String> invalidFiscalCodes = new ArrayList<>(allFiscalCodes);
+            invalidFiscalCodes.removeAll(
+                    validFiscalCodes.stream().map(FiscalCode::getCode).toList()
+            );
+
+
+            List<Person> people =
+                    JSON.getPeople(peopleFilepathJson);
+
+            List<Person> peopleWithFiscalCodeInFile =
+                    getPeopleWithFiscalCodeInList(people,validFiscalCodes,generator);
+
+            List<String> unmatchedFiscalCodes = new ArrayList<>(allFiscalCodes);
+            unmatchedFiscalCodes.removeAll(invalidFiscalCodes);
+            unmatchedFiscalCodes.removeAll(
+                    peopleWithFiscalCodeInFile.stream().map(p -> p.getFiscalCode().getCode()).toList()
+            );
+
+            JSON.writeOutput(people,invalidFiscalCodes, unmatchedFiscalCodes, outputFilepathJson);
         } catch (Exception e) {
             System.out.println("Errore nella lettura dei file json:");
             System.out.println(e.getMessage());

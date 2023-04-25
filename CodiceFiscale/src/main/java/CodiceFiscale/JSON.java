@@ -1,21 +1,43 @@
 package CodiceFiscale;
 
 import CodiceFiscale.person.Person;
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.*;
-import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class JSON {
-    private static final Gson gson = new Gson();
+    //Instance of gson used to read from json files and to write to json files
+    private static final Gson gson = new GsonBuilder()
+            .setPrettyPrinting().registerTypeAdapter(Person.class, getPersonSerializer()).create();
 
+    //Custom serializer for Person class, required serializing fiscal code as a string and not as an object
+    private static JsonSerializer<Person> getPersonSerializer() {
+        return (src, typeOfSrc, context) -> {
+            JsonObject jsonPerson = new JsonObject();
+
+            jsonPerson.addProperty("nome", src.getName());
+            jsonPerson.addProperty("cognome", src.getSurname());
+            jsonPerson.addProperty("sesso", src.getSex().toString());
+            jsonPerson.addProperty("comune_nascita", src.getCityOfBirth());
+            jsonPerson.addProperty("data_nascita", src.getDateOfBirth());
+            jsonPerson.addProperty("codice_fiscale", src.getFiscalCode().getCode());
+
+            return jsonPerson;
+        };
+    }
+
+    //Class used to serialize the data in the correct structure
     private static class Output {
         private List<Person> persone;
         private Codici codici;
@@ -26,6 +48,7 @@ public class JSON {
         }
     }
 
+    //Class used to represent the field 'codici' in the json
     private static class Codici {
         private List<String> invalidi;
         private List<String> spaiati;
@@ -36,60 +59,47 @@ public class JSON {
         }
     }
 
-    public static Map<String, String> getCityCodes(String filename) throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(filename));
-        TypeToken<List<Map<String, String>>> mapType = new TypeToken<>() {
-        };
+    //Reads city names and codes from the appropriate file and returns them as a map
+    public static Map<String, String> getCityCodes(String filepath) throws IOException {
+        FileReader fileReader = new FileReader(new File(filepath));
+        TypeToken<List<Map<String, String>>> mapType = new TypeToken<>() {};
+
         //Reads from json as a list of maps and puts all the maps together as a single map.
-        Map<String, String> cityCodes =
-                gson.fromJson(reader, mapType)
-                        .stream()
-                        .collect(Collectors.toMap(s -> s.get("nome"), s -> s.get("codice")));
+        Map<String, String> cityCodes = new HashMap<>();
+        List<Map<String,String>> foundCities = gson.fromJson(fileReader, mapType);
+        for ( Map<String,String> city : foundCities) {
+            cityCodes.put(
+                    //The current city name without any non-allowed characters.
+                    city.get("nome").replaceAll("[^'\\-\\sa-zA-Z]",""),
+                    //The current city code.
+                    city.get("codice")
+            );
+        }
 
         return cityCodes;
     }
 
-    public static List<String> getFiscalCodes(String filename) throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(filename));
-        TypeToken<List<String>> listType = new TypeToken<>(){};
-
-        return gson.fromJson(reader,listType);
+    //Reads fiscal codes from the appropriate json file and returns them as a list.
+    public static List<String> getFiscalCodes(String filepath) throws IOException {
+        FileReader fileReader = new FileReader(new File(filepath));
+        return Arrays.asList(gson.fromJson(fileReader,String[].class));
     }
 
-    public static List<Person> getPeople(String filename) throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(filename));
-        return Arrays.asList(gson.fromJson(reader,Person[].class));
+    //Reads people's data from appropriate json file and returns it as a list of Person instances.
+    public static List<Person> getPeople(String filepath) throws IOException {
+        FileReader fileReader = new FileReader(filepath);
+        return Arrays.asList(gson.fromJson(fileReader,Person[].class));
     }
-
-    public static void writeOutput(List<Person> people,List<String> invalid, List<String> unmatched, String filename)
+    
+    //Write to json file the processed data:
+    // people with their fiscal codes if not absent,
+    // invalid fiscal codes
+    // and unmatched fiscal codes.
+    public static void writeOutput(List<Person> people,List<String> invalid, List<String> unmatched, String filepath)
             throws IOException {
-        GsonBuilder customGson = new GsonBuilder().setPrettyPrinting();
-        customGson.registerTypeAdapter(Person.class, getPersonSerializer());
-
-        Gson gson = customGson.create();
-
         Output output = new Output(people,invalid,unmatched);
-        FileOutputStream fos = new FileOutputStream(filename);
-        OutputStreamWriter ow = new OutputStreamWriter(fos);
-        ow.write(gson.toJson(output));
-        ow.flush();
-    }
-
-    private static JsonSerializer<Person> getPersonSerializer() {
-        return new JsonSerializer<>() {
-            @Override
-            public JsonElement serialize(Person src, Type typeOfSrc, JsonSerializationContext context) {
-                JsonObject jsonPerson = new JsonObject();
-
-                jsonPerson.addProperty("nome", src.getName());
-                jsonPerson.addProperty("cognome", src.getSurname());
-                jsonPerson.addProperty("sesso", src.getSex().toString());
-                jsonPerson.addProperty("comune_nascita", src.getCityOfBirth());
-                jsonPerson.addProperty("data_nascita", src.getDateOfBirth());
-                jsonPerson.addProperty("codice_fiscale", src.getFiscalCode().getCode());
-
-                return jsonPerson;
-            }
-        };
+        FileWriter fw = new FileWriter(filepath);
+        gson.toJson(output, fw);
+        fw.close();
     }
 }

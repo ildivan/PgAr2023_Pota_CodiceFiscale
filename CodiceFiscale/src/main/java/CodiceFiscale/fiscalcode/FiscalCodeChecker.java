@@ -1,7 +1,6 @@
 package CodiceFiscale.fiscalcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 public class FiscalCodeChecker {
@@ -89,7 +88,7 @@ public class FiscalCodeChecker {
         return (char) (numericControlChar + (int)'A');
     }
 
-    public ArrayList<Integer> convertFiscalCodeToNumeric(String fiscalCode) {
+    private ArrayList<Integer> convertFiscalCodeToNumeric(String fiscalCode) {
         ArrayList<Integer> numericFiscalCode = new ArrayList<>();
 
         for (int i = 0; i < fiscalCode.length(); i++) {

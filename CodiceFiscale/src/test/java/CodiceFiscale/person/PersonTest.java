@@ -2,14 +2,14 @@ package CodiceFiscale.person;
 
 
 import CodiceFiscale.error.InvalidInputException;
-import CodiceFiscale.error.InvalidInputException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.time.Year;
-import java.util.Calendar;
+import java.time.LocalDate;
 
 public class PersonTest {
+
+    static public LocalDate today = LocalDate.now();
 
     @Test
     public void shouldCreatePerson(){
@@ -19,7 +19,7 @@ public class PersonTest {
 
     @Test
     public void shouldFailToCreatePersonBornInTheFutureByAYear(){
-        int currentYear = Year.now().getValue();
+        int currentYear = today.getYear();
         Assertions.assertThrows(InvalidInputException.class,()->{
             new Person("Mario", "Rossi",
                     Sex.M, "Milano", String.format("%d-1-1",currentYear+1));
@@ -28,8 +28,8 @@ public class PersonTest {
 
     @Test
     public void shouldFailToCreatePersonBornInTheFutureByAMonth(){
-        int currentYear = Year.now().getValue();
-        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
+        int currentYear = today.getYear();
+        int currentMonth = today.getMonthValue();
         Assertions.assertThrows(InvalidInputException.class,()->{
             new Person("Mario", "Rossi",
                     Sex.M, "Milano", String.format("%d-%d-1",currentYear,currentMonth+1));
@@ -38,9 +38,9 @@ public class PersonTest {
 
     @Test
     public void shouldFailToCreatePersonBornInTheFutureByADay(){
-        int currentYear = Year.now().getValue();
-        int currentMonth = Calendar.getInstance().get(Calendar.MONTH) + 1;
-        int currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
+        int currentYear = today.getYear();
+        int currentMonth = today.getMonthValue();
+        int currentDay = today.getDayOfMonth();
         Assertions.assertThrows(InvalidInputException.class,()->{
             new Person("Mario", "Rossi",
                     Sex.M, "Milano", String.format("%d-%d-%d",currentYear,currentMonth,currentDay+1));

@@ -22,8 +22,8 @@ public class FiscalCodeGeneratorTest {
 
     @Test
     public void shouldSucceedToGenerateFiscalCode(){
-        Person mario = new Person("Ivan","Abrami", Sex.M,"BRESCIA", "2003-12-25");
-        mario.setFiscalCode(generator);
-        Assertions.assertEquals("BRMVNI03T25B157K",mario.getFiscalCode().getCode());
+        Person ivan = new Person("Ivan","Abrami", Sex.M,"BRESCIA", "2003-12-25");
+        ivan.setFiscalCode(generator);
+        Assertions.assertEquals("BRMVNI03T25B157K",ivan.getFiscalCode().getCode());
     }
 }
