@@ -2,10 +2,17 @@ package CodiceFiscale.fiscalcode;
 
 import CodiceFiscale.error.InvalidInputException;
 
+/**
+ * Wrapper for a string representing a fiscal code, ensures the user the validity of the code
+ * by being instantiable by the package either from a FiscalCodeGenerator or from a string
+ * and a FiscalCodeChecker that will throw an exception if it is not valid.
+ */
 public class FiscalCode {
     private final String code;
+    //Static instance representing that the code is absent.
+    public static final FiscalCode ABSENT = new FiscalCode();
 
-    public FiscalCode(){
+    private FiscalCode(){
         code = "ASSENTE";
     }
 
@@ -24,6 +31,9 @@ public class FiscalCode {
         code = generatedFiscalCode;
     }
 
+    /**
+     * @return The fiscal code.
+     */
     public String getCode() {
         return code;
     }

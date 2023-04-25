@@ -34,7 +34,7 @@ public class Person{
      * @param surname      Surname of the person.
      * @param sex          Can be male (Sex.M) or female (Sex.F)
      * @param cityOfBirth  String containing the city of birth of the person.
-     * @param dateOfBirth String representing the person's date of birth formatted like this "YYYY-MM-DD"
+     * @param dateOfBirth  String representing the person's date of birth formatted this way "YYYY-MM-DD"
      */
     public Person(String name, String surname, Sex sex,
                   String cityOfBirth, String dateOfBirth){
@@ -58,7 +58,7 @@ public class Person{
         checkDateValidity(yearOfBirth, monthOfBirth, dayOfBirth);
         this.dateOfBirth = dateOfBirth;
 
-        fiscalCode = new FiscalCode();
+        fiscalCode = FiscalCode.ABSENT;
     }
 
 
@@ -82,7 +82,7 @@ public class Person{
         if(sex == null) throw new InvalidInputException("Sex not valid, it is null");
     }
 
-    public static void checkDateFormat(String dateOfBirth) {
+    private static void checkDateFormat(String dateOfBirth) {
         boolean validFormat = dateOfBirth.matches("([0-9]{4})-([0-9]{2})-([0-9]{2})");
         if (!validFormat) {
             throw new InvalidInputException(String.format("Date is not formatted correctly: %s", dateOfBirth));
@@ -174,6 +174,10 @@ public class Person{
         return Integer.parseInt(dateOfBirth.substring(8,10));
     }
 
+    /**
+     * Set fiscalCode to an instance created by the FiscalCodeGenerator passed as argument.
+     * @param generator FiscalCodeGenerator that generates the fiscal code ensuring its correctness.
+     */
     public void setFiscalCode(FiscalCodeGenerator generator) {
         this.fiscalCode = generator.generateFiscalCode(this);
     }
@@ -181,7 +185,11 @@ public class Person{
     public FiscalCode getFiscalCode() {
         return fiscalCode;
     }
+
+    /**
+     * Resets the person's fiscal code to an instance containing the default value.
+     */
     public void resetFiscalCode() {
-        fiscalCode = new FiscalCode();
+        fiscalCode = FiscalCode.ABSENT;
     }
 }

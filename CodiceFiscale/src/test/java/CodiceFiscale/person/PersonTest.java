@@ -132,4 +132,28 @@ public class PersonTest {
         new Person("aa", "Rossi", Sex.M,
                 "Milano", "2003-11-30");
     }
+
+    @Test
+    public void shouldFailToCreatePersonWithInvalidCharactersInDate(){
+        Assertions.assertThrows(InvalidInputException.class,()->{
+            new Person("c", "Rossi",
+                    Sex.M, "Milano", "20\n3-11-30");
+        });
+    }
+
+    @Test
+    public void shouldFailToCreatePersonWithInvalidDateSeparator(){
+        Assertions.assertThrows(InvalidInputException.class,()->{
+            new Person("c", "Rossi",
+                    Sex.M, "Milano", "2003/11-30");
+        });
+    }
+
+    @Test
+    public void shouldFailToCreatePersonWithInvalidDateFormat(){
+        Assertions.assertThrows(InvalidInputException.class,()->{
+            new Person("c", "Rossi",
+                    Sex.M, "Milano", "200-111-30");
+        });
+    }
 }

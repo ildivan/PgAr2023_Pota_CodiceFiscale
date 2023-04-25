@@ -176,8 +176,8 @@ public class XML {
         }
         xmlw.writeEndElement();
     }
-    
-    //Writes an xml tag that does not have any sub-tags or any attributes.
+
+    //Writes xml tag that does not have any sub-tags or any attributes.
     private static void writeTag(XMLStreamWriter xmlw, String name, String value) throws XMLStreamException {
         xmlw.writeStartElement(name);
         xmlw.writeCharacters(value);
