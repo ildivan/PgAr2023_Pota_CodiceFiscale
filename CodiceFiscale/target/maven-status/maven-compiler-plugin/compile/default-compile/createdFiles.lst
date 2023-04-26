@@ -1,12 +1,12 @@
 CodiceFiscale/JSON$1.class
 CodiceFiscale/error/InvalidInputException.class
-CodiceFiscale/JSON$Codici.class
 CodiceFiscale/fiscalcode/FiscalCodeGenerator.class
 CodiceFiscale/person/Sex.class
 CodiceFiscale/XML.class
 CodiceFiscale/Main.class
 CodiceFiscale/person/Person.class
 CodiceFiscale/JSON.class
+CodiceFiscale/JSON$Codes.class
 CodiceFiscale/fiscalcode/FiscalCode.class
 CodiceFiscale/fiscalcode/FiscalCodeChecker.class
 CodiceFiscale/JSON$Output.class

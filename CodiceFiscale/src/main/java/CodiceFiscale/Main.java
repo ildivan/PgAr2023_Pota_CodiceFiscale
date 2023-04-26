@@ -108,23 +108,19 @@ public class Main {
     //Returns a fiscal code's string list of the people who are not matched by a fiscal code in the file.
     private static List<String> getUnmatchedFiscalCodes
             (List<Person> people, List<FiscalCode> validFiscalCodes, FiscalCodeGenerator generator) {
-        setPeopleWithFiscalCodeInList(people,validFiscalCodes,generator);
-
-        List<String> matchedFiscalCodes = getMatchedFiscalCodes(people);
-
-        List<String> unmatchedFiscalCodes =
-                //Creates a stream of all valid fiscal codes
-                toListOfStrings(validFiscalCodes).stream()
-                        //Take only fiscal codes that are not in matchedFiscalCodes
-                        .filter(code -> !matchedFiscalCodes.contains(code))
-                        //Converts to list
-                        .toList();
+        List<String> matchedFiscalCodes = getMatchedFiscalCodes(people,validFiscalCodes,generator);
+        //Starts with all valid fiscal codes and removes the one that are matched,
+        // a copy is necessary as toListOfStrings returns an immutable list.
+        List<String> unmatchedFiscalCodes = new ArrayList<>(toListOfStrings(validFiscalCodes));
+        unmatchedFiscalCodes.removeAll(matchedFiscalCodes);
 
         return unmatchedFiscalCodes;
     }
 
     //Returns a fiscal code's string list of the people who were matched in the file.
-    private static List<String> getMatchedFiscalCodes(List<Person> people) {
+    private static List<String> getMatchedFiscalCodes
+            (List<Person> people, List<FiscalCode> validFiscalCodes, FiscalCodeGenerator generator) {
+        setFiscalCodesOfPeopleMatchingInList(people,validFiscalCodes,generator);
         List<String> matchedFiscalCodes =
                 people.stream()
                         //Creates a stream of the people's fiscal codes
@@ -141,7 +137,7 @@ public class Main {
 
     //Generates the FiscalCode of every person, then resets to default the fiscal code
     //of the people who are not matched by any elements of fiscalCodes.
-    public static void setPeopleWithFiscalCodeInList
+    public static void setFiscalCodesOfPeopleMatchingInList
             (List<Person> allPeople, List<FiscalCode> fiscalCodes,FiscalCodeGenerator generator){
         List<String> fiscalCodeStrings = toListOfStrings(fiscalCodes);
 

@@ -26,7 +26,7 @@ public class FiscalCode {
         throw new InvalidInputException("Codice fiscale non valido.");
     }
 
-    //Protected constructor, intended to be used ONLY by a FiscalCodeGenerator.
+    //Protected constructor, intended to be used ONLY in FiscalCodeGenerator.
     protected FiscalCode(String generatedFiscalCode){
         code = generatedFiscalCode;
     }

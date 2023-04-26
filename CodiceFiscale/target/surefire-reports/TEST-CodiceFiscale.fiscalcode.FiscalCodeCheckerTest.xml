@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter1922973944666745194.jar /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire 2023-04-25T21-14-22_674-jvmRun1 surefire10043782294208028869tmp surefire_07747074849363362469tmp"/>
+    <property name="sun.java.command" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter1348685264373102123.jar /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire 2023-04-26T12-23-22_761-jvmRun1 surefire5323936746634588495tmp surefire_01848726796085547434tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/test-classes:/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/classes:/home/divan/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/divan/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/home/divan/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/home/divan/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/divan/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/home/divan/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/home/divan/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter1922973944666745194.jar"/>
+    <property name="surefire.real.class.path" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter1348685264373102123.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.6+10-Ubuntu-0ubuntu122.04"/>
     <property name="user.name" value="divan"/>
@@ -64,6 +64,6 @@
   <testcase name="shouldFailInvalidName" classname="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0"/>
   <testcase name="shouldFailInvalidPositionOfXInSurname" classname="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0"/>
   <testcase name="shouldFailDay29OfFebruary" classname="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0"/>
-  <testcase name="shouldBeTooShort" classname="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0.001"/>
+  <testcase name="shouldBeTooShort" classname="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0"/>
   <testcase name="shouldFailInvalidSurname" classname="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0"/>
 </testsuite>
