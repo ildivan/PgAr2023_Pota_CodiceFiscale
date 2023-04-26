@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0.001" tests="15" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="CodiceFiscale.fiscalcode.FiscalCodeCheckerTest" time="0" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter1348685264373102123.jar /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire 2023-04-26T12-23-22_761-jvmRun1 surefire5323936746634588495tmp surefire_01848726796085547434tmp"/>
+    <property name="sun.java.command" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter18362927134161864221.jar /home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire 2023-04-26T18-47-18_795-jvmRun1 surefire15908824195347598981tmp surefire_012823761269352397778tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/test-classes:/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/classes:/home/divan/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/divan/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.1/junit-jupiter-engine-5.9.1.jar:/home/divan/.m2/repository/org/junit/platform/junit-platform-engine/1.9.1/junit-platform-engine-1.9.1.jar:/home/divan/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/divan/.m2/repository/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.jar:/home/divan/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar:/home/divan/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter1348685264373102123.jar"/>
+    <property name="surefire.real.class.path" value="/home/divan/Documents/GitHub/CodiceFiscale/CodiceFiscale/target/surefire/surefirebooter18362927134161864221.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.6+10-Ubuntu-0ubuntu122.04"/>
     <property name="user.name" value="divan"/>

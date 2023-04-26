@@ -20,7 +20,7 @@ public class JSON {
     private static final Gson gson = new GsonBuilder()
             .setPrettyPrinting().registerTypeAdapter(Person.class, getPersonSerializer()).create();
 
-    //Custom serializer for Person class, required serializing fiscal code as a string and not as an object
+    //Custom serializer for Person class, required to serialize fiscal code as a string and not as an object
     private static JsonSerializer<Person> getPersonSerializer() {
         return (src, typeOfSrc, context) -> {
             JsonObject jsonPerson = new JsonObject();

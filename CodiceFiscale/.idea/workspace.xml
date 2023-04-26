@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8fd2732c-7683-40bf-bbe3-9574fdd7e096" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/XML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/XML.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/fiscalcode/FiscalCodeGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
       <recent name="CodiceFiscale.person" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.FiscalCodeGeneratorTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CodiceFiscale.Main" />
       <module name="CodiceFiscale" />
@@ -147,8 +144,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FiscalCodeGeneratorTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PersonTest" />
         <item itemvalue="JUnit.FiscalCodeCheckerTest" />
         <item itemvalue="JUnit.FiscalCodeCheckerTest.shouldSucceed" />
@@ -175,6 +172,7 @@
       <workItem from="1682359578895" duration="9010000" />
       <workItem from="1682413084304" duration="32626000" />
       <workItem from="1682499816212" duration="4793000" />
+      <workItem from="1682525625600" duration="2003000" />
     </task>
     <servers />
   </component>

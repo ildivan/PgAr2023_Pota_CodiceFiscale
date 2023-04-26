@@ -16,14 +16,15 @@ public class FiscalCodeGeneratorTest {
     @BeforeAll
     public static void initializeMap(){
         Map<String, String> cityCodes = new HashMap<>(1);
-        cityCodes.put("BRESCIA","B157");
+        cityCodes.put("ALCARA LI FUSI","A177");
         generator = new FiscalCodeGenerator(cityCodes);
     }
 
     @Test
     public void shouldSucceedToGenerateFiscalCode(){
-        Person ivan = new Person("Ivan","Abrami", Sex.M,"BRESCIA", "2003-12-25");
-        ivan.setFiscalCode(generator);
-        Assertions.assertEquals("BRMVNI03T25B157K",ivan.getFiscalCode().getCode());
+        Person giuse = new Person("GIUSEPPE","MUSSO",
+                Sex.M,"ALCARA LI FUSI", "1940-04-27");
+        giuse.setFiscalCode(generator);
+        Assertions.assertEquals("MSSGPP40D27A177B",giuse.getFiscalCode().getCode());
     }
 }

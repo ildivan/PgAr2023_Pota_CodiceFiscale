@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest
+shouldSucceedToGenerateFiscalCode  Time elapsed: 0.003 s  <<< ERROR!
+CodiceFiscale.error.InvalidInputException: City does not exist ALCARA LI FUSI
+	at CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest.shouldSucceedToGenerateFiscalCode(FiscalCodeGeneratorTest.java:27)
+
