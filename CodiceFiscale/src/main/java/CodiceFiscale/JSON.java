@@ -7,7 +7,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,20 +39,20 @@ public class JSON {
     //Class used to serialize the data in the correct structure
     private static class Output {
         private List<Person> persone;
-        private Codici codici;
+        private Codes codici;
 
         public Output(List<Person> persone, List<String> invalidi, List<String> spaiati) {
             this.persone = persone;
-            this.codici = new  Codici(invalidi, spaiati);
+            this.codici = new Codes(invalidi, spaiati);
         }
     }
 
     //Class used to represent the field 'codici' in the json
-    private static class Codici {
+    private static class Codes {
         private List<String> invalidi;
         private List<String> spaiati;
 
-        public Codici(List<String> invalidi, List<String> spaiati) {
+        public Codes(List<String> invalidi, List<String> spaiati) {
             this.invalidi = invalidi;
             this.spaiati = spaiati;
         }
@@ -61,12 +60,14 @@ public class JSON {
 
     //Reads city names and codes from the appropriate file and returns them as a map
     public static Map<String, String> getCityCodes(String filepath) throws IOException {
-        FileReader fileReader = new FileReader(new File(filepath));
+        FileReader fileReader = new FileReader(filepath);
         TypeToken<List<Map<String, String>>> mapType = new TypeToken<>() {};
 
-        //Reads from json as a list of maps and puts all the maps together as a single map.
-        Map<String, String> cityCodes = new HashMap<>();
+        //Reads from json as a list of maps.
         List<Map<String,String>> foundCities = gson.fromJson(fileReader, mapType);
+
+        //Puts all the maps together as a single map.
+        Map<String, String> cityCodes = new HashMap<>();
         for ( Map<String,String> city : foundCities) {
             cityCodes.put(
                     //The current city name without any non-allowed characters.
@@ -81,11 +82,11 @@ public class JSON {
 
     //Reads fiscal codes from the appropriate json file and returns them as a list.
     public static List<String> getFiscalCodes(String filepath) throws IOException {
-        FileReader fileReader = new FileReader(new File(filepath));
+        FileReader fileReader = new FileReader(filepath);
         return Arrays.asList(gson.fromJson(fileReader,String[].class));
     }
 
-    //Reads people's data from appropriate json file and returns it as a list of Person instances.
+    //Reads people's data from the appropriate json file and returns it as a list of Person instances.
     public static List<Person> getPeople(String filepath) throws IOException {
         FileReader fileReader = new FileReader(filepath);
         return Arrays.asList(gson.fromJson(fileReader,Person[].class));

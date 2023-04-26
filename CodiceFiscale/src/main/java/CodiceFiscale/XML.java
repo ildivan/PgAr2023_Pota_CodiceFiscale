@@ -10,38 +10,20 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class XML {
     private static final XMLInputFactory xmlif = XMLInputFactory.newInstance();
     private static final XMLOutputFactory xmlof = XMLOutputFactory.newInstance();
 
-    public static HashMap<String, String> getCityCodes(String filepath)
+    //Search for city names and codes in the given filepath and returns them as a map.
+    public static Map<String, String> getCityCodes(String filepath)
             throws FileNotFoundException, XMLStreamException {
-        HashMap<String, String> cityCodesMap = new HashMap<>();
-        ArrayList<String> cityNames = new ArrayList<>();
-        ArrayList<String> cityCodes = new ArrayList<>();
+        Map<String,List<String>> cityData = readFromFile(filepath,"nome","codice");
+        List<String> cityNames = cityData.get("nome");
+        List<String> cityCodes = cityData.get("codice");
 
-        XMLStreamReader xmlr;
-        xmlr = xmlif.createXMLStreamReader(filepath,
-                new FileInputStream(filepath));
-
-        String lastTag = "";
-        while (xmlr.hasNext()) {
-            switch (xmlr.getEventType()) {
-                case XMLStreamConstants.START_ELEMENT -> lastTag = xmlr.getLocalName();
-                case XMLStreamConstants.CHARACTERS -> {
-                    if (xmlr.getText().trim().length() > 0) {
-                        if (lastTag.equals("nome")) {
-                            cityNames.add(xmlr.getText().replaceAll("[^'\\-\\sa-zA-Z]",""));
-                        } else if (lastTag.equals("codice")) {
-                            cityCodes.add(xmlr.getText());
-                        }
-                    }
-                }
-            }
-            xmlr.next();
-        }
-
+        Map<String, String> cityCodesMap = new HashMap<>();
         for (int i = 0; i < cityNames.size(); i++) {
             cityCodesMap.put(cityNames.get(i), cityCodes.get(i));
         }
@@ -49,66 +31,29 @@ public class XML {
         return cityCodesMap;
     }
 
-    public static ArrayList<String> getFiscalCodes(String filepath)
+    //Search for fiscal codes in the given filepath and returns them as a list of strings.
+    public static List<String> getFiscalCodes(String filepath)
             throws FileNotFoundException, XMLStreamException {
-        ArrayList<String> fiscalCodes = new ArrayList<>();
-
-        XMLStreamReader xmlr;
-
-        xmlr = xmlif.createXMLStreamReader(filepath,
-                new FileInputStream(filepath));
-
-        String lastTag = "";
-        while (xmlr.hasNext()) {
-            switch (xmlr.getEventType()) {
-                case XMLStreamConstants.START_ELEMENT -> lastTag = xmlr.getLocalName();
-                case XMLStreamConstants.CHARACTERS -> {
-                    if (xmlr.getText().trim().length() > 0) {
-                        if (lastTag.equals("codice")) {
-                            fiscalCodes.add(xmlr.getText());
-                        }
-                    }
-                }
-            }
-            xmlr.next();
-        }
-        return fiscalCodes;
+        return readFromFile(filepath,"codice").get("codice");
     }
 
-    public static ArrayList<Person> getPeople(String filepath)
+    //Search for people data in the given filepath and returns them as a list of Person instances.
+    public static List<Person> getPeople(String filepath)
             throws FileNotFoundException, XMLStreamException {
+        //The list of tags to search for in the file.
+        String[] tags = {"nome","cognome","sesso","comune_nascita","data_nascita"};
+        //Maps every tag to the list of strings found in the file inside that tag.
+        Map<String, List<String>> peopleData = readFromFile(filepath, tags);
+
         ArrayList<Person> people = new ArrayList<>();
-        ArrayList<String> names = new ArrayList<>();
-        ArrayList<String> surnames = new ArrayList<>();
-        ArrayList<String> sexes = new ArrayList<>();
-        ArrayList<String> citiesOfBirth = new ArrayList<>();
-        ArrayList<String> datesOfBirth = new ArrayList<>();
-
-
-        XMLStreamReader xmlr;
-        xmlr = xmlif.createXMLStreamReader(filepath,
-                new FileInputStream(filepath));
-
-        String lastTag = "";
-        while (xmlr.hasNext()) {
-            switch (xmlr.getEventType()) {
-                case XMLStreamConstants.START_ELEMENT -> lastTag = xmlr.getLocalName();
-                case XMLStreamConstants.CHARACTERS -> {
-                    if (xmlr.getText().trim().length() > 0) {
-                        switch (lastTag) {
-                            case "nome" -> names.add(xmlr.getText());
-                            case "cognome" -> surnames.add(xmlr.getText());
-                            case "sesso" -> sexes.add(xmlr.getText());
-                            case "comune_nascita" -> citiesOfBirth.add(xmlr.getText());
-                            case "data_nascita" -> datesOfBirth.add(xmlr.getText());
-                        }
-                    }
-                }
-            }
-            xmlr.next();
-        }
+        List<String> names = peopleData.get(tags[0]);
+        List<String> surnames = peopleData.get(tags[1]);
+        List<String> sexes = peopleData.get(tags[2]);
+        List<String> citiesOfBirth = peopleData.get(tags[3]);
+        List<String> datesOfBirth = peopleData.get(tags[4]);
 
         for (int i = 0; i < names.size(); i++) {
+            //An exception will be thrown in the constructor if the sex is null
             Sex sex = (sexes.get(i).equals("M") ? Sex.M : (sexes.get(i).equals("F") ? Sex.F : null));
             people.add(new Person(
                     names.get(i), surnames.get(i), sex, citiesOfBirth.get(i), datesOfBirth.get(i))
@@ -117,6 +62,44 @@ public class XML {
         return people;
     }
 
+    //Generic method to read from a XML file given the file path
+    // and the list of tags containing data to search for.
+    public static Map<String,List<String>> readFromFile(String filepath,String...tagNames)
+            throws FileNotFoundException, XMLStreamException{
+        Map<String,List<String>> data = new HashMap<>();
+        //Initialize all tags with empty array lists.
+        for (String tag : tagNames) {
+            data.put(tag,new ArrayList<>());
+        }
+
+        XMLStreamReader xmlr;
+        xmlr = xmlif.createXMLStreamReader(filepath,
+                new FileInputStream(filepath));
+
+        String lastTag = "";
+        while(xmlr.hasNext()) {
+            switch (xmlr.getEventType()) {
+                case XMLStreamConstants.START_ELEMENT -> lastTag = xmlr.getLocalName();
+                case XMLStreamConstants.CHARACTERS -> {
+                    if (xmlr.getText().trim().length() > 0) {
+                        for (String tag : tagNames) {
+                            if (tag.equals(lastTag)){ //Checks if the text found is inside one of the searched tags
+                                data.get(tag).add(xmlr.getText()); //Adds the text to the list corresponding to the tag
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            xmlr.next();
+        }
+
+        return data;
+    }
+
+    //Writes to file the people with their fiscal codes,
+    //then writes the list of invalid fiscal codes
+    //and the list of unmatched fiscal codes.
     public static void writeOutput(List<Person> people,List<String> invalid, List<String> unmatched, String filepath){
         XMLStreamWriter xmlw;
         try {
@@ -124,8 +107,8 @@ public class XML {
             xmlw.writeStartDocument("utf-8", "1.0");
             xmlw.writeStartElement("output");
 
-            writePeople(xmlw,people);
-            writeCodes(xmlw,invalid,unmatched);
+            writePeopleSection(xmlw,people);//Writes the section 'persone'
+            writeCodesSection(xmlw,invalid,unmatched);//Writes the section 'codici'
 
             xmlw.writeEndElement();
             xmlw.writeEndDocument();
@@ -136,7 +119,7 @@ public class XML {
         }
     }
 
-    private static void writePeople(XMLStreamWriter xmlw, List<Person> people) throws XMLStreamException {
+    private static void writePeopleSection(XMLStreamWriter xmlw, List<Person> people) throws XMLStreamException {
         xmlw.writeStartElement("persone");
         xmlw.writeAttribute("numero",Integer.toString(people.size()));
         for (int i = 0; i < people.size(); i++) {
@@ -145,6 +128,7 @@ public class XML {
         xmlw.writeEndElement();
     }
 
+    //Writes to file the XML structure of a single person
     private static void writePerson(XMLStreamWriter xmlw, Person person, int id) throws XMLStreamException {
         xmlw.writeStartElement("persona");
         xmlw.writeAttribute("id", Integer.toString(id));
@@ -159,7 +143,7 @@ public class XML {
         xmlw.writeEndElement();
     }
 
-    private static void writeCodes(XMLStreamWriter xmlw, List<String> invalid, List<String> unmatched)
+    private static void writeCodesSection(XMLStreamWriter xmlw, List<String> invalid, List<String> unmatched)
             throws XMLStreamException {
         xmlw.writeStartElement("codici");
         writeFiscalCodeSeries(xmlw,invalid, "invalidi");
@@ -167,6 +151,7 @@ public class XML {
         xmlw.writeEndElement();
     }
 
+    //Writes to file the list of fiscal code's XML structure
     private static void writeFiscalCodeSeries(XMLStreamWriter xmlw, List<String> series, String name)
             throws XMLStreamException {
         xmlw.writeStartElement(name);

@@ -6,27 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8fd2732c-7683-40bf-bbe3-9574fdd7e096" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/JSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/XML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/XML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/fiscalcode/FiscalCodeChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodiceFiscale/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CodiceFiscale/person/PersonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/CodiceFiscale-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/XML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/XML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/fiscalcode/FiscalCodeChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CodiceFiscale/person/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CodiceFiscale/person/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.person.PersonTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CodiceFiscale.person.PersonTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeCheckerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.fiscalcode.FiscalCodeGeneratorTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.person.PersonTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CodiceFiscale.person.PersonTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CodiceFiscale/fiscalcode/FiscalCodeCheckerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +173,7 @@
       <workItem from="1682336944815" duration="15026000" />
       <workItem from="1682359578895" duration="9010000" />
       <workItem from="1682413084304" duration="32626000" />
+      <workItem from="1682499816212" duration="3126000" />
     </task>
     <servers />
   </component>
