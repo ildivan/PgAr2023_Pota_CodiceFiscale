@@ -1,8 +1,11 @@
 package CodiceFiscale.error;
 
+/**
+ * Exception thrown in case of invalid input in fiscalcode and person packages.
+ */
 public class InvalidInputException extends RuntimeException{
     public InvalidInputException() {
-        this("Name not valid.");
+        this("Input not valid.");
     }
 
     public InvalidInputException(String message) {
